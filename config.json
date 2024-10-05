@@ -10,13 +10,13 @@
     "git_url" : "https://github.com/codingworld",
     "blog_name" : "Coding World",
     "blog_title" : "A Blog Liked By Programmer",
-    "gmail-user":"janiritik312@gmail.com",
-    "gmail-password":"ritik18042003@",
-    "about_text": "Hi my name is RJ and I create blog website and I am a genius.",
+    "gmail-user":"abcd@gmail.com",
+    "gmail-password":"password",
+    "about_text": "Add Text",
     "no_of_posts": 2,
     "login_image": "login.png",
-    "admin_user":"Ritik",
-    "admin_password": "codingworld",
-    "upload_location": "C:\\Users\\rituj\\PycharmProjects\\pythonProject\\Static"
+    "admin_user":"User",
+    "admin_password": "password",
+    "upload_location": "Add Your Path"
   }
 }
