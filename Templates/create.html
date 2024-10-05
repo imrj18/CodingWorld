@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/admin-bg.jpg') }}')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Admin Panel</h1>
+                        <span class="subheading">Manage your posts and make changes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <form id="contactForm" method="post" novalidate>
+            <div class="form-floating">
+                <input class="form-control" id="title" name="title" type="text" placeholder="Name" data-sb-validations="required" />
+                <label for="title">Title</label>
+                <div class="invalid-feedback" data-sb-feedback="name:required">A title is required.</div>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" id="tline" name="tline" type="text" placeholder="Tagline" data-sb-validations="required" />
+                <label for="tline">Tagline</label>
+                <div class="invalid-feedback" data-sb-feedback="tline:required">A tagline is required.</div>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" id="slug" name="slug" type="text" placeholder="Slug" data-sb-validations="required" />
+                <label for="slug">Slug</label>
+                <div class="invalid-feedback" data-sb-feedback="slug:required">A slug is required.</div>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" id="content" name="content" placeholder="Enter your content here..." style="height: 12rem" data-sb-validations="required"></textarea>
+                <label for="content">Content</label>
+                <div class="invalid-feedback" data-sb-feedback="content:required">Content is required.</div>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" id="img_file" name="img_file" placeholder="Enter the image file name..." style="height: 12rem" data-sb-validations="required"></textarea>
+                <label for="img_file">Image File</label>
+                <div class="invalid-feedback" data-sb-feedback="img_file:required">An image file name is required.</div>
+            </div>
+            <br>
+            <!-- Submit success message-->
+            <!-- This is what your users will see when the form has successfully submitted-->
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    To activate this form, sign up at
+                    <br />
+                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                </div>
+            </div>
+            <!-- Success Message -->
+            {% if success_message %}
+            <div class="alert alert-success" role="alert">
+                {{ success_message }}
+            </div>
+            {% endif %}
+            <!-- Failure Message -->
+            {% if error_message %}
+            <div class="alert alert-danger" role="alert">
+                {{ error_message }}
+            </div>
+            {% endif %}
+            <div id="success"></div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

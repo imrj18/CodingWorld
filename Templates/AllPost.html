@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+    {% for post in posts %}
+        <!-- Page Header-->
+        {% if post.img_file %}
+        {% set fname = 'assets/img/' + post.img_file %}
+        {% else %}
+        <p>No image available</p>
+        {% endif %}
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename=fname) }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{{ post.title }}</h1>
+                            <h2 class="subheading">{{ post.tagline }}</h2>
+                            <span class="meta">
+                                Posted by {% if post.user_id in usernames %}
+                    <a href="#">{{ usernames[post.user_id] }}</a>
+                    {% else %}
+                    <span>Unknown</span>
+                    {% endif %}
+                    on {{ post.date }}</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>{{ post_content | safe }}</p>
+                        <a href="http://spaceipsum.com/"></a>
+                        <a href="https://www.flickr.com/photos/nasacommons/"></a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}
