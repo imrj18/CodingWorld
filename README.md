@@ -9,8 +9,7 @@
 4. [How to Use](#how-to-use)
 5. [Project Structure](#project-structure)
 6. [Contributing](#contributing)
-7. [License](#license)
-8. [Acknowledgements](#acknowledgements)
+7. [Acknowledgements](#acknowledgements)
 
 ---
 
@@ -182,12 +181,6 @@ CodingWorld/
    git push origin feature-name
    ```
 6. **Submit a pull request** 🚀.
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
 
 ---
 
